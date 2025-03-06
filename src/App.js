@@ -3,10 +3,10 @@ import Contact from "./Contacts";
 
 const App = () => {
     return (
-        <>
+        <div>
             <h1>React Project</h1>
             <p><Contact name="Johnson" email="johnson@gmail.com" phone="9999"/></p>
-        </>
+        </div>
     );
 }
 
