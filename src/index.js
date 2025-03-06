@@ -31,9 +31,9 @@ function TheFrag() {
 
 const app = createRoot(document.getElementById('app'));
 app.render(<App />);
-
-const other = createRoot(document.getElementById('other'));
-other.render(<Other />);
-
-const theFrag = createRoot(document.getElementById('theFrag'));
-theFrag.render(<TheFrag />);
+//
+// const other = createRoot(document.getElementById('other'));
+// other.render(<Other />);
+//
+// const theFrag = createRoot(document.getElementById('theFrag'));
+// theFrag.render(<TheFrag />);

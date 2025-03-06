@@ -5,7 +5,7 @@ const App = () => {
     return (
         <>
             <h1>React Project</h1>
-            <Contact name="Johnson" email="johnson@gmail.com" phone="9999"/>
+            <p><Contact name="Johnson" email="johnson@gmail.com" phone="9999"/></p>
         </>
     );
 }
