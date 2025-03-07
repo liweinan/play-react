@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Contact from "./Contact.jsx";
+import Contact2 from "./Contact2.jsx";
 import data from "./data/contacts.js"
 
 function App() {
@@ -10,9 +11,15 @@ function App() {
 
     const contacts = data.map((item) => {
         return (
-            <Contact name={item.name} email={item.email} phone={item.phone}/>
+            <Contact key={item.id} name={item.name} email={item.email} phone={item.phone}/>
         )
     })
+
+    const lily = {
+        name: "Lily",
+        email: "lily@gmail.com",
+        phone: "12345678",
+    }
 
     console.log(contacts);
 
@@ -34,8 +41,9 @@ function App() {
                 <p>
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
-                <Contact name="Johnson" email="johnson@gmail.com" phone="9999"/>
+                <Contact key="0" name="Johnson" email="johnson@gmail.com" phone="9999"/>
                 {contacts}
+                <Contact2 entry={lily}/>
             </div>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
