@@ -44,7 +44,7 @@ function App() {
                 </p>
                 <Contact key="0" name="Johnson" email="johnson@gmail.com" phone="9999"/>
                 {contacts}
-                <Contact2 entry={lily}/>
+                <Contact2 {...lily}/>
             </div>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
