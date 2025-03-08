@@ -8,6 +8,7 @@ import data from "./data/contacts.js"
 
 function App() {
     const [count, setCount] = useState(0)
+    // can't destruct like this: const {count, setCount} = useState(0)
 
     const contacts = data.map((item) => {
         return (
