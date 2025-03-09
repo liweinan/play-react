@@ -6,6 +6,7 @@ import Contact from "./Contact.jsx";
 import Contact2 from "./Contact2.jsx";
 import data from "./data/contacts.js"
 import MyForm from "./form/MyForm.jsx";
+import MyForm2 from "./form/MyForm2.jsx";
 
 function App() {
     const [count, setCount] = useState(0)
@@ -51,6 +52,7 @@ function App() {
                 Click on the Vite and React logos to learn more
             </p>
             <MyForm/>
+            <MyForm2/>
         </>
     )
 }

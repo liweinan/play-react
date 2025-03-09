@@ -16,13 +16,15 @@ export default function MyForm(props) {
 
 function handleSubmit(event) {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
+    const formEl = event.currentTarget
+    const formData = new FormData(formEl)
     const firstName = formData.get("firstName")
     const lastName = formData.get("lastName")
     submitViaAPI({
         firstName,
         lastName,
     })
+    formEl.reset()
 }
 
 function submitViaAPI({firstName, lastName}) {
