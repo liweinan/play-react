@@ -5,6 +5,10 @@ import {useState} from "react";
 export default function MyForm2(props) {
     const [items, setItems] = useState([])
 
+    const itemList = items.map(item => (
+        <li key={item}>{item}</li>
+    ))
+
     function handleAction(formData) {
         const foo = formData.get("foo")
         const bar = formData.get("bar")
@@ -34,7 +38,7 @@ export default function MyForm2(props) {
                 </p>
             </form>
             <p>
-                {items}
+                {itemList}
             </p>
         </>
     )
