@@ -7,6 +7,7 @@ import Contact2 from "./Contact2.jsx";
 import data from "./data/contacts.js"
 import MyForm from "./form/MyForm.jsx";
 import MyForm2 from "./form/MyForm2.jsx";
+import PriceCalculator from './PriceCalculator.jsx'
 
 function App() {
     const [count, setCount] = useState(0)
@@ -53,6 +54,7 @@ function App() {
             </p>
             <MyForm/>
             <MyForm2/>
+            <PriceCalculator/>
         </>
     )
 }
