@@ -6,6 +6,7 @@ import PriceCalculator from './PriceCalculator.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PriceCalculator />
+    {/*<PriceCalculator />*/}
+      <App/>
   </StrictMode>,
 )
