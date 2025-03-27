@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import ReactDOM from "react-dom";
 
+// https://app.testdome.com/library?page=1&term=Mega+Store+App&termMatchType=equalsCaseInsensitive&questionId=129895
 const DiscountType = {
     Standard: 'standard',
     Seasonal: 'seasonal',
