@@ -11,13 +11,13 @@ export default function CharacterAttributes({ totalPoints }) {
         console.log("speed val: " + speed);
         console.log("strength val: " + strength);
         console.log("tp val: " + tp);
-        const val = event.target.value;
+        const val = Number(event.target.value);
 
         if (attributeName === "strength") {
             if (val + speed > totalPoints) {
                 const diff = val + speed - totalPoints;
                 setStrength(val);
-                setSpeed(speed - diff);
+                setSpeed(Math.max(speed - diff, 0));
             } else {
                 const diff = val - strength;
                 setStrength(val);
@@ -27,7 +27,7 @@ export default function CharacterAttributes({ totalPoints }) {
             if (val + strength > totalPoints) {
                 const diff = val + strength - totalPoints;
                 setSpeed(val);
-                setStrength(strength - diff);
+                setStrength(Math.max(strength - diff, 0));
             } else {
                 const diff = val - speed;
                 setSpeed(val);
