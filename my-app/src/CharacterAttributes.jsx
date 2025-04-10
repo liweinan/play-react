@@ -7,11 +7,12 @@ export default function CharacterAttributes({ totalPoints }) {
     const [speed, setSpeed] = useState(0);
 
     const handleAttributeChange = (event, attributeName) => {
-        console.log("slide val: " + event.target.value);
+        const val = Number(event.target.value);
+        console.log("target val: " + val);
         console.log("speed val: " + speed);
         console.log("strength val: " + strength);
         console.log("tp val: " + tp);
-        const val = Number(event.target.value);
+
 
         if (attributeName === "strength") {
             if (val + speed > totalPoints) {
