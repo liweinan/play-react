@@ -8,6 +8,7 @@ import data from "./data/contacts.js"
 import MyForm from "./form/MyForm.jsx";
 import MyForm2 from "./form/MyForm2.jsx";
 import PriceCalculator from './PriceCalculator.jsx'
+import CharacterAttributes from './CharacterAttributes.jsx';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -42,6 +43,7 @@ function App() {
                 <button onClick={() => setCount((cnt) => cnt + 1)}>
                     count is {count}
                 </button>
+                <CharacterAttributes totalPoints={15}/>
                 <p>
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
