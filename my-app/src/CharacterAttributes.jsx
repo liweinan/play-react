@@ -11,10 +11,10 @@ export default function CharacterAttributes({ totalPoints }) {
 
         if (attributeName === "strength") {
             setStrength(Math.min(val, totalPoints))
-            setSpeed(Math.max(0, Math.min(totalPoints - val, speed)))
+            setSpeed(Math.min(totalPoints - val, speed))
         } else if (attributeName === "speed") {
             setSpeed(Math.min(val, totalPoints))
-            setStrength(Math.max(0, Math.min(totalPoints - val, strength)))
+            setStrength(Math.min(totalPoints - val, strength))
         }
         console.log('after...', speed, strength)
     };
