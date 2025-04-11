@@ -2,50 +2,26 @@ import React, { useState } from "react";
 // import ReactDOM from "react-dom/client";
 
 export default function CharacterAttributes({ totalPoints }) {
-    const [tp, setTp] = useState(totalPoints);
     const [strength, setStrength] = useState(0);
     const [speed, setSpeed] = useState(0);
 
     const handleAttributeChange = (event, attributeName) => {
         const val = Number(event.target.value);
-
-        console.log("target val: " + val);
-        console.log("before speed val: " + speed);
-        console.log("before strength val: " + strength);
-        console.log("before tp val: " + tp);
+        console.log('before...', attributeName, val, speed, strength)
 
         if (attributeName === "strength") {
-            if (val + speed > totalPoints) {
-                const diff = val + speed - totalPoints;
-                setStrength(val);
-                setSpeed(speed - diff);
-            } else {
-                const diff = val - strength;
-                setStrength(val);
-                setTp(tp - diff);
-            }
+            setStrength(Math.min(val, totalPoints))
+            setSpeed(Math.max(0, Math.min(totalPoints - val, speed)))
         } else if (attributeName === "speed") {
-            if (val + strength > totalPoints) {
-                const diff = val + strength - totalPoints;
-                setSpeed(val);
-                setStrength(strength - diff, 0);
-            } else {
-                const diff = val - speed;
-                setSpeed(val);
-                setTp(tp - diff);
-            }
+            setSpeed(Math.min(val, totalPoints))
+            setStrength(Math.max(0, Math.min(totalPoints - val, strength)))
         }
-
-        console.log("target val: " + val);
-        console.log("after speed val: " + speed);
-        console.log("after strength val: " + strength);
-        console.log("after tp val: " + tp);
-
+        console.log('after...', speed, strength)
     };
 
     return (
         <div>
-            Character stats: <span id="points">{tp}</span> points
+            Character stats: <span id="points">{totalPoints - speed - strength}</span> points
             <div>
                 <input
                     type="range"
