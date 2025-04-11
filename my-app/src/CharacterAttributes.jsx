@@ -8,17 +8,17 @@ export default function CharacterAttributes({ totalPoints }) {
 
     const handleAttributeChange = (event, attributeName) => {
         const val = Number(event.target.value);
-        console.log("target val: " + val);
-        console.log("speed val: " + speed);
-        console.log("strength val: " + strength);
-        console.log("tp val: " + tp);
 
+        console.log("target val: " + val);
+        console.log("before speed val: " + speed);
+        console.log("before strength val: " + strength);
+        console.log("before tp val: " + tp);
 
         if (attributeName === "strength") {
             if (val + speed > totalPoints) {
                 const diff = val + speed - totalPoints;
                 setStrength(val);
-                setSpeed(Math.max(speed - diff, 0));
+                setSpeed(speed - diff);
             } else {
                 const diff = val - strength;
                 setStrength(val);
@@ -28,13 +28,19 @@ export default function CharacterAttributes({ totalPoints }) {
             if (val + strength > totalPoints) {
                 const diff = val + strength - totalPoints;
                 setSpeed(val);
-                setStrength(Math.max(strength - diff, 0));
+                setStrength(strength - diff, 0);
             } else {
                 const diff = val - speed;
                 setSpeed(val);
                 setTp(tp - diff);
             }
         }
+
+        console.log("target val: " + val);
+        console.log("after speed val: " + speed);
+        console.log("after strength val: " + strength);
+        console.log("after tp val: " + tp);
+
     };
 
     return (
