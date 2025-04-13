@@ -1,3 +1,27 @@
+# React Router Demo App
+
+A React application demonstrating routing, component organization, and testing best practices.
+
+## Features
+
+- React Router navigation
+- Multiple page components
+- Form handling
+- Price calculator with discount types
+- Character attributes component
+- Comprehensive test suite
+
+## Tech Stack
+
+- React 18
+- React Router v6
+- Vite
+- Vitest (Testing)
+- React Testing Library
+- pnpm (Package Manager)
+
+## Project Structure
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
