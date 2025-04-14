@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 // https://github.com/facebook/react/issues/11527#issuecomment-360199710
 // https://github.com/toFrankie/blog/issues/115 / https://github.com/liweinan/play-react/blob/main/my-app/src/CharacterAttributes.jsx
 // https://www.testdome.com/library?page=1&skillArea=48&questionId=129894
+// https://github.com/liweinan/deepseek-answers/blob/main/files/react-set-state.md
 export default function CharacterAttributes({totalPoints}) {
     const [strength, setStrength] = useState(0);
     const [speed, setSpeed] = useState(0);
