@@ -4,6 +4,7 @@ import './App.css'
 import PriceCalculator from './PriceCalculator'
 import CharacterAttributes from './CharacterAttributes'
 import TodoList from './TodoList'
+import FocusableInput from './FocusableInput'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -49,6 +50,7 @@ function App() {
                     <li><Link to="/calculator">Price Calculator</Link></li>
                     <li><Link to="/character">Character Attributes</Link></li>
                     <li><Link to="/todolist">Todo List</Link></li>
+                    <li><Link to="/focusableinput">Focusable Input</Link></li>
                 </ul>
             </nav>
 
@@ -65,6 +67,7 @@ function App() {
                             console.log(item, event);
                         }}
                     />}/>
+                    <Route path="/focusableinput" element={<FocusableInput shouldFocus={true}/>}/>
                 </Routes>
             </main>
         </div>
