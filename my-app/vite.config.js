@@ -7,7 +7,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/test/setup.js',
+    setupFiles: './src/setupTests.js',
     // you might want to disable CSS modules for testing
     css: false,
     coverage: {

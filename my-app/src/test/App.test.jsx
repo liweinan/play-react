@@ -12,12 +12,15 @@ describe('App Component', () => {
     )
     
     const navLinks = screen.getAllByRole('link')
-    expect(navLinks).toHaveLength(5) // Home, Contacts, Forms, Calculator, Character
+    expect(navLinks).toHaveLength(8) // Home, Contacts, Forms, Calculator, Character, TodoList, FocusableInput, ItemListManager
     
     expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Contacts' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Forms' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Price Calculator' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Character Attributes' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Todo List' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Focusable Input' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Item List Manager' })).toBeInTheDocument()
   })
 }) 
