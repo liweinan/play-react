@@ -3,6 +3,7 @@ import {Routes, Route, Link} from 'react-router-dom'
 import './App.css'
 import PriceCalculator from './PriceCalculator'
 import CharacterAttributes from './CharacterAttributes'
+import ItemListManager from "./ItemListManager";
 import TodoList from './TodoList'
 import FocusableInput from './FocusableInput'
 
@@ -51,6 +52,7 @@ function App() {
                     <li><Link to="/character">Character Attributes</Link></li>
                     <li><Link to="/todolist">Todo List</Link></li>
                     <li><Link to="/focusableinput">Focusable Input</Link></li>
+                    <li><Link to="/itemListManager">Item List Manager</Link></li>
                 </ul>
             </nav>
 
@@ -61,6 +63,7 @@ function App() {
                     <Route path="/forms" element={<Forms/>}/>
                     <Route path="/calculator" element={<PriceCalculator/>}/>
                     <Route path="/character" element={<CharacterAttributes totalPoints={15}/>}/>
+                    <Route path="/itemListManager" element={<ItemListManager/>}/>
                     <Route path="/todolist" element={<TodoList
                         onListClick={(event) => console.log('List clicked!')}
                         onItemClick={(item, event) => {
