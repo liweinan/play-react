@@ -6,6 +6,7 @@ import CharacterAttributes from './CharacterAttributes'
 import ItemListManager from "./ItemListManager";
 import TodoList from './TodoList'
 import FocusableInput from './FocusableInput'
+import LogoutWrapper from "./testdome/LogoutWrapper.jsx";
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -53,6 +54,7 @@ function App() {
                     <li><Link to="/todolist">Todo List</Link></li>
                     <li><Link to="/focusableinput">Focusable Input</Link></li>
                     <li><Link to="/itemListManager">Item List Manager</Link></li>
+                    <li><Link to="/logoutwrapper">Logout Wrapper</Link></li>
                 </ul>
             </nav>
 
@@ -65,12 +67,13 @@ function App() {
                     <Route path="/character" element={<CharacterAttributes totalPoints={15}/>}/>
                     <Route path="/itemListManager" element={<ItemListManager/>}/>
                     <Route path="/todolist" element={<TodoList
-                        onListClick={(event) => console.log('List clicked!')}
+                        onListClick={() => console.log('List clicked!')}
                         onItemClick={(item, event) => {
                             console.log(item, event);
                         }}
                     />}/>
                     <Route path="/focusableinput" element={<FocusableInput shouldFocus={true}/>}/>
+                    <Route path="/logoutwrapper" element={<LogoutWrapper username="James"/>}/>
                 </Routes>
             </main>
         </div>
