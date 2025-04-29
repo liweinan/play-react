@@ -5,13 +5,16 @@ const SecurityContext = React.createContext({username: "", permissions: []});
 const ControlsComponent = (props) => {
     return (
         <SecurityContext.Provider value={{username: props.username}}>
-            <LogoutWrapper></LogoutWrapper>
+            {/*<SecurityContext.Provider value={{username: "Tom"}}>*/}
+                <LogoutWrapper></LogoutWrapper>
+            {/*</SecurityContext.Provider>*/}
         </SecurityContext.Provider>
     );
 };
 
 const LogoutWrapper = (props) => {
     var context = React.useContext(SecurityContext);
+    console.log("permissions: ", props.permissions);
     return (
         <div>
             <p>{context.username}</p>
