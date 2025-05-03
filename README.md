@@ -43,9 +43,10 @@ A comprehensive React application showcasing various features including routing,
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm preview` - Preview production build
-- `pnpm test` - Run tests
-- `pnpm test:ui` - Run tests with UI
-- `pnpm test:run` - Run tests once
+- `pnpm test` - Run tests in watch mode (auto-reruns on file changes)
+- `pnpm test:run` - Run tests once and exit
+- `pnpm test:ci` - Run tests in CI environment
+- `pnpm test:ui` - Run tests with UI interface
 - `pnpm coverage` - Generate test coverage report
 - `pnpm lint` - Run ESLint
 
@@ -74,6 +75,14 @@ src/
 ## Testing
 
 The project includes a comprehensive test suite using Vitest and React Testing Library. Tests are organized in the `test/`, `testdome/`, and `__tests__/` directories.
+
+### Running Tests
+
+- **Development Mode**: Use `pnpm test` to run tests in watch mode. This is ideal for development as it automatically reruns tests when files change.
+- **Single Run**: Use `pnpm test:run` to run tests once and exit. Useful for quick checks.
+- **CI Environment**: Use `pnpm test:ci` for continuous integration environments.
+- **UI Mode**: Use `pnpm test:ui` to run tests with a graphical interface.
+- **Coverage**: Use `pnpm coverage` to generate a test coverage report.
 
 ## Development
 
