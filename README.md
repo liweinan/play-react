@@ -1,37 +1,93 @@
-# React Router Demo App
+# React Demo App
 
-A React application demonstrating routing, component organization, and testing best practices.
+A comprehensive React application showcasing various features including routing, form handling, and component organization.
 
 ## Features
 
 - React Router navigation
-- Multiple page components
-- Form handling
+- Form handling and validation
 - Price calculator with discount types
-- Character attributes component
+- Character attributes management
+- Focusable input component
+- Item list management
+- Todo list functionality
 - Comprehensive test suite
 
 ## Tech Stack
 
-- React 18
-- React Router v6
-- Vite
+- React 19
+- React Router v7
+- Vite 6
 - Vitest (Testing)
 - React Testing Library
+- ESLint
 - pnpm (Package Manager)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (latest LTS version recommended)
+- pnpm package manager
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm test` - Run tests
+- `pnpm test:ui` - Run tests with UI
+- `pnpm test:run` - Run tests once
+- `pnpm coverage` - Generate test coverage report
+- `pnpm lint` - Run ESLint
 
 ## Project Structure
 
-# React + Vite
+```
+src/
+├── assets/         # Static assets
+├── data/          # Data files
+├── form/          # Form-related components
+├── pages/         # Page components
+├── test/          # Test files
+├── testdome/      # TestDome specific components
+├── __tests__/     # Additional test files
+├── App.jsx        # Main application component
+├── CharacterAttributes.jsx  # Character attributes component
+├── Contact.jsx    # Contact page component
+├── Contact2.jsx   # Alternative contact page
+├── FocusableInput.jsx  # Focusable input component
+├── ItemListManager.jsx # Item list management component
+├── PriceCalculator.jsx # Price calculation component
+├── TodoList.jsx   # Todo list component
+└── main.jsx       # Application entry point
+```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Testing
 
-Currently, two official plugins are available:
+The project includes a comprehensive test suite using Vitest and React Testing Library. Tests are organized in the `test/`, `testdome/`, and `__tests__/` directories.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Development
 
-## Expanding the ESLint configuration
+This project uses Vite for fast development and building. The development server includes:
+- Hot Module Replacement (HMR)
+- Fast refresh
+- ESLint integration
+- TypeScript support (if needed)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
