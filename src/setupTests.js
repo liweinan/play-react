@@ -15,4 +15,18 @@ beforeAll(() => {
 // Add any global teardown here if needed
 afterAll(() => {
   // Add any cleanup that should run after all tests
-}); 
+});
+
+// Mock matchMedia if it's not available in jsdom
+if (!window.matchMedia) {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  })
+} 

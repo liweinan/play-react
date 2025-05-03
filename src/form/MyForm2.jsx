@@ -13,7 +13,9 @@ export default function MyForm2(props) {
         <li key={animal}>{animal}</li>
     ))
 
-    function handleAction(formData) {
+    function handleSubmit(event) {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
         const foo = formData.get("foo")
         const animals = formData.getAll("animals")
         submitViaAPI({
@@ -32,7 +34,7 @@ export default function MyForm2(props) {
 
     return (
         <>
-            <form id="my-form2" action={handleAction}>
+            <form id="my-form2" onSubmit={handleSubmit}>
                 <p>
                     <input key="foo" name="foo" type="text" placeholder="Foo"/>
                 </p>
