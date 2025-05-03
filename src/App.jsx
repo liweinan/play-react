@@ -7,6 +7,8 @@ import ItemListManager from "./testdome/ItemListManager";
 import TodoList from './testdome/TodoList'
 import FocusableInput from './testdome/FocusableInput'
 import LogoutWrapper from "./testdome/LogoutWrapper.jsx";
+import Contact from './pages/Contact'
+import Contact2 from './pages/Contact2'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -74,6 +76,8 @@ function App() {
                     />}/>
                     <Route path="/focusableinput" element={<FocusableInput shouldFocus={true}/>}/>
                     <Route path="/logoutwrapper" element={<LogoutWrapper username="James"/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/contact2" element={<Contact2/>}/>
                 </Routes>
             </main>
         </div>

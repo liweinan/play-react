@@ -1,5 +1,5 @@
-import Contact from "../Contact"
-import Contact2 from "../Contact2"
+import Contact from "./Contact"
+import Contact2 from "./Contact2"
 import data from "../data/contacts.js"
 
 export default function Contacts() {
