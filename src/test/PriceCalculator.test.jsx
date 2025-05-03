@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import PriceCalculator from '../PriceCalculator'
+import PriceCalculator from '../testdome/MegaStoreApp.jsx'
 
 describe('PriceCalculator Component', () => {
   it('renders calculator form', () => {

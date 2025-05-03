@@ -1,11 +1,11 @@
 import {useState} from 'react'
 import {Routes, Route, Link} from 'react-router-dom'
 import './App.css'
-import PriceCalculator from './PriceCalculator'
-import CharacterAttributes from './CharacterAttributes'
+import PriceCalculator from './testdome/MegaStoreApp.jsx'
+import CharacterAttributes from './testdome/CharacterAttributes'
 import ItemListManager from "./ItemListManager";
-import TodoList from './TodoList'
-import FocusableInput from './FocusableInput'
+import TodoList from './testdome/TodoList'
+import FocusableInput from './testdome/FocusableInput'
 import LogoutWrapper from "./testdome/LogoutWrapper.jsx";
 
 // Create simple placeholder components for now

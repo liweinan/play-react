@@ -67,7 +67,7 @@ src/
 ├── Contact2.jsx   # Alternative contact page
 ├── FocusableInput.jsx  # Focusable input component
 ├── ItemListManager.jsx # Item list management component
-├── PriceCalculator.jsx # Price calculation component
+├── MegaStoreApp.jsx # Price calculation component
 ├── TodoList.jsx   # Todo list component
 └── main.jsx       # Application entry point
 ```

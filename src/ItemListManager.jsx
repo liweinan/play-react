@@ -3,9 +3,7 @@
 import { useState } from "react";
 // import "h8k-components";
 
-import "./App.css";
-
-function App() {
+function ItemListManager() {
     const [items, setItems] = useState([]);
     const [input, setInput] = useState("");
 
@@ -42,4 +40,4 @@ function App() {
     );
 }
 
-export default App;
+export default ItemListManager;
