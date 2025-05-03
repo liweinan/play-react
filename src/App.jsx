@@ -7,6 +7,7 @@ import ItemListManager from "./testdome/ItemListManager";
 import TodoList from './testdome/TodoList'
 import FocusableInput from './testdome/FocusableInput'
 import LogoutWrapper from "./testdome/LogoutWrapper.jsx";
+import GroceryApp from "./testdome/GroceryApp.jsx";
 import Contact from './pages/Contact'
 import Contact2 from './pages/Contact2'
 
@@ -57,6 +58,7 @@ function App() {
                     <li><Link to="/focusableinput">Focusable Input</Link></li>
                     <li><Link to="/itemListManager">Item List Manager</Link></li>
                     <li><Link to="/logoutwrapper">Logout Wrapper</Link></li>
+                    <li><Link to="/groceryapp">Grocery App</Link></li>
                 </ul>
             </nav>
 
@@ -76,6 +78,10 @@ function App() {
                     />}/>
                     <Route path="/focusableinput" element={<FocusableInput shouldFocus={true}/>}/>
                     <Route path="/logoutwrapper" element={<LogoutWrapper username="James"/>}/>
+                    <Route path="/groceryapp" element={<GroceryApp products={[
+                        {name: "Oranges", votes: 0},
+                        {name: "Bananas", votes: 0}
+                    ]}/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/contact2" element={<Contact2/>}/>
                 </Routes>
