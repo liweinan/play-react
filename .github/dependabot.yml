@@ -24,12 +24,4 @@ updates:
     open-pull-requests-limit: 10
     # Allow updates to pre-release versions
     allow:
-      - dependency-type: "all"
-    # Ignore specific dependencies
-    ignore:
-      - dependency-name: "react"
-        versions: ["19.x"]
-      - dependency-name: "react-dom"
-        versions: ["19.x"]
-      - dependency-name: "react-router-dom"
-        versions: ["7.x"] 
+      - dependency-type: "all" 
