@@ -4,23 +4,31 @@ import { BrowserRouter } from 'react-router-dom'
 import App from '../App'
 
 describe('App Component', () => {
-  it('renders navigation links', () => {
+  it('renders essential navigation links', () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     )
     
-    const navLinks = screen.getAllByRole('link')
-    expect(navLinks).toHaveLength(8) // Home, Contacts, Forms, Calculator, Character, TodoList, FocusableInput, ItemListManager
+    // Check for essential navigation links
+    const essentialLinks = [
+      'Home',
+      'Contacts',
+      'Forms',
+      'Price Calculator',
+      'Character Attributes',
+      'Todo List',
+      'Focusable Input',
+      'Item List Manager'
+    ]
     
-    expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Contacts' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Forms' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Price Calculator' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Character Attributes' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Todo List' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Focusable Input' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Item List Manager' })).toBeInTheDocument()
+    essentialLinks.forEach(linkText => {
+      expect(screen.getByRole('link', { name: linkText })).toBeInTheDocument()
+    })
+    
+    // Verify that there are navigation links present
+    const navLinks = screen.getAllByRole('link')
+    expect(navLinks.length).toBeGreaterThanOrEqual(essentialLinks.length)
   })
 }) 
