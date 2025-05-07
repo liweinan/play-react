@@ -52,7 +52,7 @@ function App() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/contacts">Contacts</Link></li>
                     <li><Link to="/forms">Forms</Link></li>
-                    <li><Link to="/calculator">Price Calculator</Link></li>
+                    <li><Link to="/calculator">Mega Store App</Link></li>
                     <li><Link to="/character">Character Attributes</Link></li>
                     <li><Link to="/todolist">Todo List</Link></li>
                     <li><Link to="/focusableinput">Focusable Input</Link></li>

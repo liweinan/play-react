@@ -16,7 +16,7 @@ describe('App Component', () => {
       'Home',
       'Contacts',
       'Forms',
-      'Price Calculator',
+      'Mega Store App',
       'Character Attributes',
       'Todo List',
       'Focusable Input',
