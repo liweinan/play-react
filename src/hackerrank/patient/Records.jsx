@@ -12,6 +12,14 @@ function Records({ id, setId }) {
         setId(medical_records[nextIndex].id);
     };
 
+    // Format date to MM/DD/YYYY
+    const formatDate = (timestamp) =>
+        new Date(timestamp).toLocaleDateString("en-US", {
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+        });
+
     if (!patientData) return null;
 
     return (
@@ -20,7 +28,7 @@ function Records({ id, setId }) {
                 <div id="patient-profile" data-testid="patient-profile" className="mx-auto">
                     <h4 id="patient-name">{patientData.userName}</h4>
                     <h5 id="patient-dob">DOB: {patientData.userDob}</h5>
-                    <h5 id="patient-height">Height: {patientData.meta.height}</h5>
+                    <h5 id="patient-height">Height: {patientData.meta.height} cm</h5>
                 </div>
                 <button
                     className="mt-10 mr-10"
@@ -45,7 +53,7 @@ function Records({ id, setId }) {
                 {records.map((record, index) => (
                     <tr key={record.id}>
                         <td>{index + 1}</td>
-                        <td>{new Date(record.timestamp).toLocaleDateString()}</td>
+                        <td>{formatDate(record.timestamp)}</td>
                         <td>{record.diagnosis.name}</td>
                         <td>{record.meta.weight}</td>
                         <td>{record.doctor.name}</td>
