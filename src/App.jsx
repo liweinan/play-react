@@ -3,7 +3,7 @@ import {Routes, Route, Link} from 'react-router-dom'
 import './App.css'
 import PriceCalculator from './testdome/MegaStoreApp.jsx'
 import CharacterAttributes from './testdome/CharacterAttributes'
-import ItemListManager from "./testdome/ItemListManager";
+import ItemListManager from "./hackerrank/ItemListManager.jsx";
 import TodoList from './testdome/TodoList'
 import FocusableInput from './testdome/FocusableInput'
 import LogoutWrapper from "./testdome/LogoutWrapper.jsx";
