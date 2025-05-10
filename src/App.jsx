@@ -10,6 +10,7 @@ import LogoutWrapper from "./testdome/LogoutWrapper.jsx";
 import GroceryApp from "./testdome/GroceryApp.jsx";
 import Contact from './pages/Contact'
 import Contact2 from './pages/Contact2'
+import Patient from './hackerrank/patient/App.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -59,6 +60,7 @@ function App() {
                     <li><Link to="/itemListManager">Item List Manager</Link></li>
                     <li><Link to="/logoutwrapper">Logout Wrapper</Link></li>
                     <li><Link to="/groceryapp">Grocery App</Link></li>
+                    <li><Link to='/patient'>Patient</Link></li>
                 </ul>
             </nav>
 
@@ -84,6 +86,7 @@ function App() {
                     ]}/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/contact2" element={<Contact2/>}/>
+                    <Route path="/patient" element={<Patient/>}/>
                 </Routes>
             </main>
         </div>
