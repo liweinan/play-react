@@ -11,7 +11,7 @@ const App = () => {
     const [showRecords, setShowRecords] = useState(false);
 
     return (
-        <div className="App">
+        <div className="forms-container">
             {/*<h8k-navbar header={title}></h8k-navbar>*/}
             <h1>{title}</h1>
             <div className="content">
