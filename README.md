@@ -55,26 +55,25 @@ A comprehensive React application showcasing various features including routing,
 ```
 src/
 ├── assets/         # Static assets
-├── data/          # Data files
-├── form/          # Form-related components
-├── pages/         # Page components
-├── test/          # Test files
-├── testdome/      # TestDome specific components
-├── __tests__/     # Additional test files
-├── App.jsx        # Main application component
+├── data/           # Data files
+├── form/           # Form-related components
+├── pages/          # Page components
+├── test/           # All test files (unit and integration)
+├── testdome/       # TestDome specific components
+├── App.jsx         # Main application component
 ├── CharacterAttributes.jsx  # Character attributes component
-├── Contact.jsx    # Contact page component
-├── Contact2.jsx   # Alternative contact page
+├── Contact.jsx     # Contact page component
+├── Contact2.jsx    # Alternative contact page
 ├── FocusableInput.jsx  # Focusable input component
 ├── ItemListManager.jsx # Item list management component
-├── MegaStoreApp.jsx # Price calculation component
-├── TodoList.jsx   # Todo list component
-└── main.jsx       # Application entry point
+├── MegaStoreApp.jsx    # Price calculation component
+├── TodoList.jsx    # Todo list component
+└── main.jsx        # Application entry point
 ```
 
 ## Testing
 
-The project includes a comprehensive test suite using Vitest and React Testing Library. Tests are organized in the `test/`, `testdome/`, and `__tests__/` directories.
+The project includes a comprehensive test suite using Vitest and React Testing Library. **All test files are now located in the `src/test/` directory.**
 
 ### Running Tests
 
