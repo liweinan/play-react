@@ -1,9 +1,8 @@
 import { vi } from 'vitest'
-import { getContacts, getContact } from '../data/contacts'
+import contacts, { getContact } from '../data/contacts'
 
 describe('contacts', () => {
-  test('getContacts returns all contacts', () => {
-    const contacts = getContacts()
+  test('contacts array contains all contacts', () => {
     expect(contacts).toHaveLength(3)
     expect(contacts[0].name).toBe('John Doe')
     expect(contacts[1].name).toBe('Jane Smith')
