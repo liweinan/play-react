@@ -1,6 +1,6 @@
- import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { vi } from 'vitest'
-import ChangeUsername from './ChangeUsername'
+import ChangeUsername from '../testdome/ChangeUsername'
 
 describe('ChangeUsername', () => {
   test('renders button, input field and username display', () => {
