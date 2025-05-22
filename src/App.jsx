@@ -11,6 +11,7 @@ import GroceryApp from "./testdome/GroceryApp.jsx";
 import Contact from './pages/Contact'
 import Contact2 from './pages/Contact2'
 import Patient from './hackerrank/patient/App.jsx'
+import ChangeUsername from "./testdome/ChangeUsername.jsx";
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -61,6 +62,7 @@ function App() {
                     <li><Link to="/logoutwrapper">Logout Wrapper</Link></li>
                     <li><Link to="/groceryapp">Grocery App</Link></li>
                     <li><Link to='/patient'>Patient</Link></li>
+                    <li><Link to='/changeusername'>Change Username</Link></li>
                 </ul>
             </nav>
 
@@ -87,6 +89,7 @@ function App() {
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/contact2" element={<Contact2/>}/>
                     <Route path="/patient" element={<Patient/>}/>
+                    <Route path="/changeusername" element={<ChangeUsername/>}></Route>
                 </Routes>
             </main>
         </div>
