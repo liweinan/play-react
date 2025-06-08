@@ -13,6 +13,7 @@ import Contact2 from './pages/Contact2'
 import Patient from './hackerrank/patient/App.jsx'
 import ChangeUsername from "./testdome/ChangeUsername.jsx";
 import ToggleMessage from "./testdome/ToggleMessage.jsx";
+import ImageGallery from "./testdome/ImageGalleryApp.jsx";
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -47,6 +48,8 @@ const Forms = () => {
     )
 }
 
+const links = ["https://bit.ly/3xXPxPR", "https://bit.ly/4de3sQr"];
+
 function App() {
     return (
         <div>
@@ -65,6 +68,7 @@ function App() {
                     <li><Link to='/patient'>Patient</Link></li>
                     <li><Link to='/changeusername'>Change Username</Link></li>
                     <li><Link to='/togglemessage'>Toggle Message</Link></li>
+                    <li><Link to='/imagegallery'>Image Gallery</Link></li>
                 </ul>
             </nav>
 
@@ -93,6 +97,7 @@ function App() {
                     <Route path="/patient" element={<Patient/>}/>
                     <Route path="/changeusername" element={<ChangeUsername/>}></Route>
                     <Route path="/togglemessage" element={<ToggleMessage/>}/>
+                    <Route path="/imagegallery" element={<ImageGallery links={links} />}/>
                 </Routes>
             </main>
         </div>
