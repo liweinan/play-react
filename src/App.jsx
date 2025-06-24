@@ -14,6 +14,7 @@ import Patient from './hackerrank/patient/App.jsx'
 import ChangeUsername from "./testdome/ChangeUsername.jsx";
 import ToggleMessage from "./testdome/ToggleMessage.jsx";
 import ImageGallery from "./testdome/ImageGalleryApp.jsx";
+import Focus from './testdome/Focus.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -69,6 +70,7 @@ function App() {
                     <li><Link to='/changeusername'>Change Username</Link></li>
                     <li><Link to='/togglemessage'>Toggle Message</Link></li>
                     <li><Link to='/imagegallery'>Image Gallery</Link></li>
+                    <li><Link to='/focus'>Focus</Link></li>
                 </ul>
             </nav>
 
@@ -98,6 +100,7 @@ function App() {
                     <Route path="/changeusername" element={<ChangeUsername/>}></Route>
                     <Route path="/togglemessage" element={<ToggleMessage/>}/>
                     <Route path="/imagegallery" element={<ImageGallery links={links} />}/>
+                    <Route path="/focus" element={<Focus focused={false}/>}/>
                 </Routes>
             </main>
         </div>
