@@ -15,6 +15,7 @@ import ChangeUsername from "./testdome/ChangeUsername.jsx";
 import ToggleMessage from "./testdome/ToggleMessage.jsx";
 import ImageGallery from "./testdome/ImageGalleryApp.jsx";
 import Focus from './testdome/Focus.jsx'
+import Focus2 from './testdome/Focus2.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -71,6 +72,7 @@ function App() {
                     <li><Link to='/togglemessage'>Toggle Message</Link></li>
                     <li><Link to='/imagegallery'>Image Gallery</Link></li>
                     <li><Link to='/focus'>Focus</Link></li>
+                    <li><Link to='/focus2'>Focus2</Link></li>
                 </ul>
             </nav>
 
@@ -101,6 +103,7 @@ function App() {
                     <Route path="/togglemessage" element={<ToggleMessage/>}/>
                     <Route path="/imagegallery" element={<ImageGallery links={links} />}/>
                     <Route path="/focus" element={<Focus focused={false}/>}/>
+                    <Route path="/focus2" element={<Focus2/>}/>
                 </Routes>
             </main>
         </div>
