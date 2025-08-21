@@ -15,9 +15,38 @@ const FancyButton = ({ children, large = false, variant = 'primary' }) => {
 
   const className = `${baseStyles} ${largeStyles} ${variantStyles[variant]}`;
 
+  // 处理 children，分别获取组件和文本
+  const processChildren = () => {
+    if (!children) return { components: [], text: '' };
+
+    const components = [];
+    let text = '';
+
+    React.Children.forEach(children, (child) => {
+      if (React.isValidElement(child)) {
+        // 这是一个 React 元素（组件）
+        components.push(child);
+      } else if (typeof child === 'string' || typeof child === 'number') {
+        // 这是文本内容
+        text += child;
+      }
+    });
+
+    return { components, text };
+  };
+
+  const { components, text } = processChildren();
+
   return (
     <button className={className}>
-      {children}
+      {/* 渲染组件 */}
+      {components.map((component, index) => (
+        <span key={index} className="inline-flex items-center mr-2">
+          {component}
+        </span>
+      ))}
+      {/* 渲染文本 */}
+      {text && <span>{text}</span>}
     </button>
   );
 };
