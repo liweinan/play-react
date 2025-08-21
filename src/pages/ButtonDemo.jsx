@@ -1,5 +1,6 @@
 import React from 'react';
 import FancyButton from './FancyButton.jsx';
+import Icon from './Icon.jsx';
 
 const ButtonDemo = () => {
   return (
@@ -120,6 +121,63 @@ const ButtonDemo = () => {
           </div>
         </div>
 
+        {/* 组件和文本混合展示 */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            组件和文本混合
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center gap-3">
+              <FancyButton variant="primary">
+                <Icon name="download" />
+                下载文件
+              </FancyButton>
+              <span className="text-sm text-gray-500">图标 + 文本</span>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3">
+              <FancyButton variant="success">
+                <Icon name="save" />
+                保存设置
+              </FancyButton>
+              <span className="text-sm text-gray-500">保存图标</span>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3">
+              <FancyButton variant="danger">
+                <Icon name="delete" />
+                删除项目
+              </FancyButton>
+              <span className="text-sm text-gray-500">删除图标</span>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3">
+              <FancyButton variant="outline">
+                <Icon name="edit" />
+                编辑内容
+              </FancyButton>
+              <span className="text-sm text-gray-500">编辑图标</span>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3">
+              <FancyButton variant="success">
+                <Icon name="check" />
+                确认操作
+              </FancyButton>
+              <span className="text-sm text-gray-500">确认图标</span>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3">
+              <FancyButton variant="secondary">
+                <Icon name="close" />
+                取消操作
+              </FancyButton>
+              <span className="text-sm text-gray-500">取消图标</span>
+            </div>
+          </div>
+        </div>
+
         {/* 尺寸对比 */}
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
@@ -129,6 +187,7 @@ const ButtonDemo = () => {
           <div className="flex flex-col items-center space-y-6">
             <div className="flex flex-col items-center gap-3">
               <FancyButton large={true} variant="primary">
+                <Icon name="download" />
                 大尺寸按钮
               </FancyButton>
               <span className="text-sm text-gray-500">large={true}</span>
@@ -136,6 +195,7 @@ const ButtonDemo = () => {
             
             <div className="flex flex-col items-center gap-3">
               <FancyButton variant="primary">
+                <Icon name="save" />
                 标准尺寸按钮
               </FancyButton>
               <span className="text-sm text-gray-500">默认尺寸</span>
@@ -143,6 +203,7 @@ const ButtonDemo = () => {
             
             <div className="flex flex-col items-center gap-3">
               <FancyButton large={false} variant="outline">
+                <Icon name="edit" />
                 小尺寸按钮
               </FancyButton>
               <span className="text-sm text-gray-500">large={false}</span>
