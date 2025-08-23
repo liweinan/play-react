@@ -24,6 +24,12 @@ const Home = () => {
     return (
         <div>
             <h1>Home</h1>
+            {/*<div style="color: red; background-color: blue;">*/}
+
+            {/*<div style={{color: "red", backgroundColor: "blue"}}>*/}
+            {/*    <h1>Test</h1>*/}
+            {/*</div>*/}
+
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
@@ -103,7 +109,7 @@ function App() {
                     <Route path="/patient" element={<Patient/>}/>
                     <Route path="/changeusername" element={<ChangeUsername/>}></Route>
                     <Route path="/togglemessage" element={<ToggleMessage/>}/>
-                    <Route path="/imagegallery" element={<ImageGallery links={links} />}/>
+                    <Route path="/imagegallery" element={<ImageGallery links={links}/>}/>
                     <Route path="/focus" element={<Focus focused={false}/>}/>
                     <Route path="/focus2" element={<Focus2/>}/>
                     <Route path="/buttons" element={<ButtonDemo/>}/>
