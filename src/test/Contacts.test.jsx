@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import Contacts from '../pages/Contacts'
+import contacts, { getContact } from '../data/contacts'
 
 // Mock the Contact components
 vi.mock('../Contact', () => ({
@@ -15,29 +16,25 @@ vi.mock('../Contact2', () => ({
   )
 }))
 
-// Mock the contacts data
-vi.mock('../data/contacts.js', () => ({
-  default: [
-    {
-      id: 1,
-      name: "Tom",
-      email: "tom@gmail.com",
-      phone: "0123456789",
-    },
-    {
-      id: 2,
-      name: "John Doe",
-      email: "john@gmail.com",
-      phone: "0123456789",
-    },
-    {
-      id: 3,
-      name: "Lucy",
-      email: "lucy@gmail.com",
-      phone: "0123456789",
-    }
-  ]
-}))
+describe('Contacts Data Layer', () => {
+  it('contacts array contains all contacts', () => {
+    expect(contacts).toHaveLength(3)
+    expect(contacts[0].name).toBe('John Doe')
+    expect(contacts[1].name).toBe('Jane Smith')
+    expect(contacts[2].name).toBe('Bob Johnson')
+  })
+
+  it('getContact returns a specific contact', () => {
+    const contact = getContact(1)
+    expect(contact.name).toBe('John Doe')
+    expect(contact.email).toBe('john@example.com')
+  })
+
+  it('getContact returns undefined for non-existent id', () => {
+    const contact = getContact(999)
+    expect(contact).toBeUndefined()
+  })
+})
 
 describe('Contacts Component', () => {
   it('renders contacts heading', () => {
@@ -46,12 +43,27 @@ describe('Contacts Component', () => {
     expect(heading).toBeInTheDocument()
   })
 
-  it('renders all contacts', () => {
+  it('renders all contacts from data', () => {
     render(<Contacts />)
-    expect(screen.getByText(/Tom/)).toBeInTheDocument()
     expect(screen.getByText(/John Doe/)).toBeInTheDocument()
-    expect(screen.getByText(/Lucy/)).toBeInTheDocument()
-    expect(screen.getByText(/Johnson/)).toBeInTheDocument()
+    expect(screen.getByText(/Jane Smith/)).toBeInTheDocument()
+    expect(screen.getByText(/Bob Johnson/)).toBeInTheDocument()
+  })
+
+  it('renders hardcoded contacts', () => {
+    render(<Contacts />)
+    // Use more specific text to avoid conflicts with "Bob Johnson"
+    expect(screen.getByText(/Johnson.*9999/)).toBeInTheDocument()
     expect(screen.getByText(/Lily/)).toBeInTheDocument()
+  })
+
+  it('renders all contact information correctly', () => {
+    render(<Contacts />)
+    
+    // Check that contact information is displayed
+    expect(screen.getByText(/john@example.com/)).toBeInTheDocument()
+    expect(screen.getByText(/jane@example.com/)).toBeInTheDocument()
+    expect(screen.getByText(/bob@example.com/)).toBeInTheDocument()
+    expect(screen.getByText(/lily@gmail.com/)).toBeInTheDocument()
   })
 }) 
