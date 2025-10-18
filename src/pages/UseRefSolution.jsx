@@ -36,6 +36,29 @@ export default function UseRefSolution() {
     }, [clickCount]);
 
     // ---------------------------------------------
+    //     触发无限循环：
+    //     ESLint: The 'logUserAction' function makes the dependencies of useEffect Hook (at line 45) change on every render.
+    //     Move it inside the useEffect callback. Alternatively, wrap the definition of 'logUserAction' in its own useCallback() Hook. (react-hooks/exhaustive-deps)
+    // ---------------------------------------------
+    //
+    // const logUserAction = () => {
+    //     const logMessage = `用户 ${userIdRef.current} 点击了 ${clickCount} 次`;
+    //     console.log(logMessage);
+    //     setLogs(prev => [...prev, {
+    //         id: Date.now(),
+    //         message: logMessage,
+    //         timestamp: new Date().toLocaleTimeString()
+    //     }]);
+    // };
+    //
+    // useEffect(() => {
+    //     if (clickCount > 0) {
+    //         logUserAction(); // 手动调用事件逻辑
+    //     }
+    // }, [clickCount, logUserAction]);
+    //
+
+    // ---------------------------------------------
     // 使用 useCallback 包装事件处理逻辑，避免ESLint警告
     // ---------------------------------------------
     //
@@ -49,29 +72,13 @@ export default function UseRefSolution() {
     //   }]);
     // }, [clickCount]);
     //
-
-
-    // ---------------------------------------------
-    //     触发无限循环：
-    //     ESLint: The 'logUserAction' function makes the dependencies of useEffect Hook (at line 45) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'logUserAction' in its own useCallback() Hook. (react-hooks/exhaustive-deps)
-    // ---------------------------------------------
-    //
-    // const logUserAction = () => {
-    //     const logMessage = `用户 ${userIdRef.current} 点击了 ${clickCount} 次`;
-    //     console.log(logMessage);
-    //     setLogs(prev => [...prev, {
-    //         id: Date.now(),
-    //         message: logMessage,
-    //         timestamp: new Date().toLocaleTimeString()
-    //     }]);
-    // };
-    // useEffect 只在 clickCount 变化时触发
     // useEffect(() => {
     //     if (clickCount > 0) {
     //         logUserAction(); // 手动调用事件逻辑
     //     }
     // }, [clickCount, logUserAction]);
     //
+
 
     const handleClick = () => {
         setClickCount(prev => prev + 1);
