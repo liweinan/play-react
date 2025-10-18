@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import UseEffectEventSolution from './UseEffectEventSolution';
-import UseEffectProblem from './UseEffectProblem';
+import {UseEffectProblem} from './UseEffectProblem';
 import UseRefSolution from './UseRefSolution';
 
 export default function UseEffectEventDemo() {
