@@ -14,7 +14,11 @@ export function UseEffectProblem() {
             message: problemMessage,
             timestamp: new Date().toLocaleTimeString()
         }]);
-    }, [clickCount]); // 只依赖 clickCount，但使用了 userId
+        // 重要发现：ESLint 的 set-state-in-effect 规则会分析整个 useEffect 的执行模式，
+        // 如果发现违反了其他 Hook 规则（如 exhaustive-deps），就会认为 setState 调用也是危险的。
+        // 这就是为什么同样的 setLogs 调用，在不同的上下文中会有不同的 ESLint 警告。
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [clickCount]); // 只依赖 clickCount，但使用了 userId - 这是故意的问题代码
 
     const handleClick = () => {
         setClickCount(prev => prev + 1);

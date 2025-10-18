@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef, useCallback} from 'react';
+import {useState, useEffect, useRef} from 'react';
 
 export default function UseRefSolution() {
     const [userId, setUserId] = useState('user-001');
@@ -156,7 +156,7 @@ export default function UseRefSolution() {
                 <p className="text-gray-700">点击次数: <span
                     className="font-mono bg-gray-100 px-2 py-1 rounded">{clickCount}</span></p>
                 <p className="text-gray-700">Ref中的ID: <span
-                    className="font-mono bg-purple-100 text-purple-800 px-2 py-1 rounded">{userIdRef.current}</span></p>
+                    className="font-mono bg-purple-100 text-purple-800 px-2 py-1 rounded">{userId}</span></p>
             </div>
 
             <div className="space-y-3 mb-4">
