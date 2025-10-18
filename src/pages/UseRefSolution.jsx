@@ -8,19 +8,21 @@ export default function UseRefSolution() {
     // 使用 useRef 来存储最新的 userId
     const userIdRef = useRef(userId);
 
+    // ---------------------------------------------
     // 手动同步 userId 到 ref
+    // ---------------------------------------------
     useEffect(() => {
         userIdRef.current = userId;
     }, [userId]);
 
 
-    /* 最简单写法，直接useRef封装 */
-    // 手动同步 userId 到 ref
     useEffect(() => {
         userIdRef.current = userId;
     }, [userId]);
 
+    // ---------------------------------------------
     // useEffect 只在 clickCount 变化时触发
+    // ---------------------------------------------
     useEffect(() => {
         if (clickCount > 0) {
             const logMessage = `用户 ${userIdRef.current} 点击了 ${clickCount} 次`;
@@ -34,10 +36,9 @@ export default function UseRefSolution() {
     }, [clickCount]);
 
     // ---------------------------------------------
-    /*
-            callBack封装：
-    */
     // 使用 useCallback 包装事件处理逻辑，避免ESLint警告
+    // ---------------------------------------------
+    //
     // const logUserAction = useCallback(() => {
     //   const logMessage = `用户 ${userIdRef.current} 点击了 ${clickCount} 次`;
     //   console.log(logMessage);
@@ -49,11 +50,12 @@ export default function UseRefSolution() {
     // }, [clickCount]);
     //
 
+
     // ---------------------------------------------
-    /*
-        触发无限循环：
-        ESLint: The 'logUserAction' function makes the dependencies of useEffect Hook (at line 45) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'logUserAction' in its own useCallback() Hook. (react-hooks/exhaustive-deps)
-     */
+    //     触发无限循环：
+    //     ESLint: The 'logUserAction' function makes the dependencies of useEffect Hook (at line 45) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'logUserAction' in its own useCallback() Hook. (react-hooks/exhaustive-deps)
+    // ---------------------------------------------
+    //
     // const logUserAction = () => {
     //     const logMessage = `用户 ${userIdRef.current} 点击了 ${clickCount} 次`;
     //     console.log(logMessage);
@@ -69,9 +71,7 @@ export default function UseRefSolution() {
     //         logUserAction(); // 手动调用事件逻辑
     //     }
     // }, [clickCount, logUserAction]);
-
-
-
+    //
 
     const handleClick = () => {
         setClickCount(prev => prev + 1);
