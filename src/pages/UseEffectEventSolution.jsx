@@ -21,7 +21,10 @@ export default function UseEffectEventSolution() {
     if (clickCount > 0) {
       logUserAction(); // 手动调用事件逻辑
     }
-  }, [clickCount, logUserAction]);
+    // 注意：useEffectEvent返回的函数引用是稳定的，不需要在依赖数组中声明
+    // 参考：https://react.dev/reference/react/useEffectEvent
+    // 更新：eslint-plugin-react-hooks@7.0.0+ 已支持useEffectEvent，无需禁用警告
+  }, [clickCount]); // 只依赖clickCount，useEffectEvent函数引用是稳定的
 
   const handleClick = () => {
     setClickCount(prev => prev + 1);
@@ -100,6 +103,17 @@ export default function UseEffectEventSolution() {
         </ul>
       </div>
 
+      <div className="bg-red-50 p-4 rounded-lg mt-4 border border-red-200">
+        <h3 className="text-lg font-semibold text-red-800 mb-2">⚠️ 重要发现：useEffectEvent的陷阱</h3>
+        <div className="text-red-700 text-sm space-y-2">
+          <p><strong>问题1：</strong>如果在useEffect依赖数组中包含useEffectEvent函数，仍然会导致无限循环！</p>
+          <p><strong>问题2：</strong>旧版本ESLint会警告缺少useEffectEvent依赖</p>
+          <p><strong>原因：</strong>useEffectEvent返回的函数引用是稳定的，不需要在依赖数组中声明</p>
+          <p><strong>解决方案：</strong>更新到eslint-plugin-react-hooks@7.0.0+版本，已支持useEffectEvent</p>
+          <p><strong>参考文档：</strong><a href="https://react.dev/reference/react/useEffectEvent" target="_blank" className="text-blue-600 underline">React官方文档 - useEffectEvent</a></p>
+        </div>
+      </div>
+
       <div className="bg-gray-100 p-4 rounded-lg mt-4">
         <h3 className="text-lg font-semibold text-gray-800 mb-2">🔍 代码实现</h3>
         <pre className="bg-gray-800 text-green-400 p-3 rounded text-xs overflow-x-auto">
@@ -111,7 +125,11 @@ useEffect(() => {
   if (clickCount > 0) {
     logUserAction();
   }
-}, [clickCount]); // 仅依赖 clickCount`}
+    // 注意：useEffectEvent返回的函数引用是稳定的，不需要在依赖数组中声明
+    // 参考：https://react.dev/reference/react/useEffectEvent
+    // 更新：eslint-plugin-react-hooks@7.0.0+ 已支持useEffectEvent，无需禁用警告
+    // 更新：eslint-plugin-react-hooks@7.0.0+ 已支持useEffectEvent，无需禁用警告
+}, [clickCount]); // 只依赖clickCount，useEffectEvent函数引用是稳定的`}
         </pre>
       </div>
     </div>
