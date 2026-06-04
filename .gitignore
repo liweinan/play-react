@@ -9,6 +9,7 @@ __snapshots__/
 # Production
 dist/
 build/
+draft.txt
 
 # Environment files
 .env
