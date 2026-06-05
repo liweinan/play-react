@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {Routes, Route, Link} from 'react-router-dom'
 import './App.css'
 import PriceCalculator from './testdome/MegaStoreApp.jsx'
-import CharacterAttributes from './testdome/CharacterAttributes'
+import CharacterPoints from './testdome/CharacterAttributes'
 import ItemListManager from "./hackerrank/ItemListManager.jsx";
 import TodoList from './testdome/TodoList'
 import FocusableInput from './testdome/FocusableInput'
@@ -96,7 +96,7 @@ function App() {
                     <Route path="/contacts" element={<Contacts/>}/>
                     <Route path="/forms" element={<Forms/>}/>
                     <Route path="/calculator" element={<PriceCalculator/>}/>
-                    <Route path="/character" element={<CharacterAttributes totalPoints={15}/>}/>
+                    <Route path="/character" element={<CharacterPoints totalPoints={5}/>}/>
                     <Route path="/itemListManager" element={<ItemListManager/>}/>
                     <Route path="/todolist" element={<TodoList
                         onListClick={() => console.log('List clicked!')}
