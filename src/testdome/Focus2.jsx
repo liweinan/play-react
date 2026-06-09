@@ -18,12 +18,12 @@ const Focus2 = ({ focused: initialFocused = false }) => {
 
     return (
         <div>
-            <input ref={inputRef} />
             <button onClick={toggleFocus}>
                 {focused ? 'Unfocus' : 'Focus'} Input2
             </button>
         </div>
-    );
+    );            <input ref={inputRef} />
+
 };
 
 export default Focus2;
