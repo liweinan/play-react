@@ -19,3 +19,10 @@ const replace = menu.map(item => {
 }); // 如果要隐式返回，需要不带大括号.
 
 console.log(replace);
+
+
+menu.map((item, idx) => {
+    console.log("menu.map");
+
+    console.log("item: ", item, " idx", idx);
+});
