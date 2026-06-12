@@ -22,7 +22,7 @@ const Focus2 = ({ focused: initialFocused = false }) => {
                 {focused ? 'Unfocus' : 'Focus'} Input2
             </button>
         </div>
-    );            <input ref={inputRef} />
+    );
 
 };
 

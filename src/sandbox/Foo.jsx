@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 
 const MyForm = ({onFormSubmit}) => { // or props.onFormSubmit
     const [formData, setFormData] = useState({
@@ -74,6 +74,12 @@ const Foo = ({name, fn}) => {
         return `S${key}`;
     }, [key]);
 
+    const foobar = useRef(0);
+
+    const showRef = () => {
+        console.log(foobar.current.name);
+        foobar.current.focus();
+    }
 
     return (
         <div>
@@ -87,6 +93,9 @@ const Foo = ({name, fn}) => {
             <MyForm onFormSubmit={(name, email) => {
                 console.log("got form from child: ", name, " ", email);
             }}/>
+
+            <input name="refbar" ref={foobar}/><p/>
+            <button onClick={showRef}>useRef</button>
         </div>
     );
 }
