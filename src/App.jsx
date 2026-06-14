@@ -21,6 +21,7 @@ import UseEffectEventDemo from './pages/UseEffectEventDemo.jsx'
 import AsyncDemo from './pages/AsyncDemo.jsx'
 import OnClickReferenceDemo from './pages/OnClickReferenceDemo.jsx'
 import Foo from './sandbox/Foo.jsx'
+import Search from './pages/Search.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -89,6 +90,7 @@ function App() {
                     <li><Link to='/async'>异步调度演示</Link></li>
                     <li><Link to='/onclick-reference'>onClick 引用演示</Link></li>
                     <li><Link to='/foo'>Foo</Link></li>
+                    <li><Link to='/search'>Search</Link></li>
                 </ul>
             </nav>
 
@@ -125,6 +127,7 @@ function App() {
                     <Route path="/async" element={<AsyncDemo/>}/>
                     <Route path="/onclick-reference" element={<OnClickReferenceDemo/>}/>
                     <Route path="/foo" element={<Foo name={"Jim"} fn={() => {console.log("Oh Yeah!!!")}}/>}/>
+                    <Route path="/search" element={<Search/>}/>
                 </Routes>
             </main>
         </div>
