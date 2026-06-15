@@ -27,6 +27,7 @@ import LazyLoadDemo from './pages/LazyLoadDemo.jsx'
 import ContextDemo from './pages/ContextDemo.jsx'
 import FilterDemo from './pages/FilterDemo.jsx'
 import HelloTs from './pages/HelloTs.tsx'
+import ApiDemo from './pages/ApiDemo.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -101,6 +102,7 @@ function App() {
                     <li><Link to='/context'>Context</Link></li>
                     <li><Link to='/filter'>Filter</Link></li>
                     <li><Link to='/hello-ts'>Hello TS</Link></li>
+                    <li><Link to='/api-demo'>API Demo</Link></li>
                 </ul>
             </nav>
 
@@ -144,6 +146,7 @@ function App() {
                     <Route path="/filter" element={<FilterDemo/>}/>
                     {/* name="React" → props 对象 { name: "React" }，见 HelloTs.tsx 注释 */}
                     <Route path="/hello-ts" element={<HelloTs name="React"/>}/>
+                    <Route path="/api-demo" element={<ApiDemo/>}/>
                 </Routes>
             </main>
         </div>

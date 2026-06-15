@@ -32,6 +32,15 @@ function searchApiPlugin() {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), searchApiPlugin()],
+  server: {
+    // 开发时把部分 /api 请求转发到 Node 后端（server/index.js，端口 3001）
+    // 前端只需写 fetch('/api/hello')，不用关心后端实际地址和跨域
+    // 注意：/api/search 仍由上面的 searchApiPlugin 处理，不走这里
+    proxy: {
+      '/api/hello': 'http://localhost:3001',
+      '/api/time': 'http://localhost:3001',
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
