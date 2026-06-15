@@ -22,6 +22,8 @@ import AsyncDemo from './pages/AsyncDemo.jsx'
 import OnClickReferenceDemo from './pages/OnClickReferenceDemo.jsx'
 import Foo from './sandbox/Foo.jsx'
 import Search from './pages/Search.jsx'
+import FiberDemo from './pages/FiberDemo.jsx'
+import LazyLoadDemo from './pages/LazyLoadDemo.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -91,6 +93,8 @@ function App() {
                     <li><Link to='/onclick-reference'>onClick 引用演示</Link></li>
                     <li><Link to='/foo'>Foo</Link></li>
                     <li><Link to='/search'>Search</Link></li>
+                    <li><Link to='/fiber'>Fiber 对比</Link></li>
+                    <li><Link to='/lazyload'>Lazy Load</Link></li>
                 </ul>
             </nav>
 
@@ -128,6 +132,8 @@ function App() {
                     <Route path="/onclick-reference" element={<OnClickReferenceDemo/>}/>
                     <Route path="/foo" element={<Foo name={"Jim"} fn={() => {console.log("Oh Yeah!!!")}}/>}/>
                     <Route path="/search" element={<Search/>}/>
+                    <Route path="/fiber" element={<FiberDemo/>}/>
+                    <Route path="/lazyload" element={<LazyLoadDemo/>}/>
                 </Routes>
             </main>
         </div>
