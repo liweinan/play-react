@@ -24,6 +24,7 @@ import Foo from './sandbox/Foo.jsx'
 import Search from './pages/Search.jsx'
 import FiberDemo from './pages/FiberDemo.jsx'
 import LazyLoadDemo from './pages/LazyLoadDemo.jsx'
+import ContextDemo from './pages/ContextDemo.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -95,6 +96,7 @@ function App() {
                     <li><Link to='/search'>Search</Link></li>
                     <li><Link to='/fiber'>Fiber 对比</Link></li>
                     <li><Link to='/lazyload'>Lazy Load</Link></li>
+                    <li><Link to='/context'>Context</Link></li>
                 </ul>
             </nav>
 
@@ -134,6 +136,7 @@ function App() {
                     <Route path="/search" element={<Search/>}/>
                     <Route path="/fiber" element={<FiberDemo/>}/>
                     <Route path="/lazyload" element={<LazyLoadDemo/>}/>
+                    <Route path="/context" element={<ContextDemo/>}/>
                 </Routes>
             </main>
         </div>
