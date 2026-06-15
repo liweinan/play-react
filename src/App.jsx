@@ -26,6 +26,7 @@ import FiberDemo from './pages/FiberDemo.jsx'
 import LazyLoadDemo from './pages/LazyLoadDemo.jsx'
 import ContextDemo from './pages/ContextDemo.jsx'
 import FilterDemo from './pages/FilterDemo.jsx'
+import HelloTs from './pages/HelloTs.tsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -99,6 +100,7 @@ function App() {
                     <li><Link to='/lazyload'>Lazy Load</Link></li>
                     <li><Link to='/context'>Context</Link></li>
                     <li><Link to='/filter'>Filter</Link></li>
+                    <li><Link to='/hello-ts'>Hello TS</Link></li>
                 </ul>
             </nav>
 
@@ -140,6 +142,8 @@ function App() {
                     <Route path="/lazyload" element={<LazyLoadDemo/>}/>
                     <Route path="/context" element={<ContextDemo/>}/>
                     <Route path="/filter" element={<FilterDemo/>}/>
+                    {/* name="React" → props 对象 { name: "React" }，见 HelloTs.tsx 注释 */}
+                    <Route path="/hello-ts" element={<HelloTs name="React"/>}/>
                 </Routes>
             </main>
         </div>
