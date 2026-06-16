@@ -28,6 +28,7 @@ import ContextDemo from './pages/ContextDemo.jsx'
 import FilterDemo from './pages/FilterDemo.jsx'
 import HelloTs from './pages/HelloTs.tsx'
 import ApiDemo from './pages/ApiDemo.jsx'
+import UseReducerDemo from './pages/UseReducerDemo.jsx'
 
 // Create simple placeholder components for now
 const Home = () => {
@@ -103,6 +104,7 @@ function App() {
                     <li><Link to='/filter'>Filter</Link></li>
                     <li><Link to='/hello-ts'>Hello TS</Link></li>
                     <li><Link to='/api-demo'>API Demo</Link></li>
+                    <li><Link to='/use-reducer'>useReducer</Link></li>
                 </ul>
             </nav>
 
@@ -147,6 +149,7 @@ function App() {
                     {/* name="React" → props 对象 { name: "React" }，见 HelloTs.tsx 注释 */}
                     <Route path="/hello-ts" element={<HelloTs name="React"/>}/>
                     <Route path="/api-demo" element={<ApiDemo/>}/>
+                    <Route path="/use-reducer" element={<UseReducerDemo/>}/>
                 </Routes>
             </main>
         </div>
