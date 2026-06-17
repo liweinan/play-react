@@ -23,6 +23,6 @@ console.log(replace);
 
 menu.map((item, idx) => {
     console.log("menu.map");
-
     console.log("item: ", item, " idx", idx);
 });
+

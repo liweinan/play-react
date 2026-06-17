@@ -69,7 +69,10 @@ const Forms = () => {
     )
 }
 
-const links = ["https://bit.ly/3xXPxPR", "https://bit.ly/4de3sQr"];
+const links = [
+    "https://picsum.photos/id/237/400/300",
+    "https://picsum.photos/id/101/400/300",
+];
 
 function App() {
     return (
