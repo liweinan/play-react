@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import {Routes, Route, Link} from 'react-router-dom'
 import './App.css'
 import PriceCalculator from './testdome/MegaStoreApp.jsx'
@@ -29,24 +28,13 @@ import FilterDemo from './pages/FilterDemo.jsx'
 import HelloTs from './pages/HelloTs.tsx'
 import ApiDemo from './pages/ApiDemo.jsx'
 import UseReducerDemo from './pages/UseReducerDemo.jsx'
+import NewImageGallery from './sandbox/NewImageGallery.jsx'
 
-// Create simple placeholder components for now
 const Home = () => {
-    const [count, setCount] = useState(0)
     return (
         <div>
             <h1>Home</h1>
-            {/*<div style="color: red; background-color: blue;">*/}
-
-            {/*<div style={{color: "red", backgroundColor: "blue"}}>*/}
-            {/*    <h1>Test</h1>*/}
-            {/*</div>*/}
-
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-            </div>
+            <NewImageGallery links={links} />
         </div>
     )
 }
@@ -93,6 +81,7 @@ function App() {
                     <li><Link to='/changeusername'>Change Username</Link></li>
                     <li><Link to='/togglemessage'>Toggle Message</Link></li>
                     <li><Link to='/imagegallery'>Image Gallery</Link></li>
+                    <li><Link to='/new-imagegallery'>New Image Gallery</Link></li>
                     <li><Link to='/focus'>Focus</Link></li>
                     <li><Link to='/focus2'>Focus2</Link></li>
                     <li><Link to='/buttons'>Tailwind 按钮展示</Link></li>
@@ -137,6 +126,7 @@ function App() {
                     <Route path="/changeusername" element={<ChangeUsername/>}></Route>
                     <Route path="/togglemessage" element={<ToggleMessage/>}/>
                     <Route path="/imagegallery" element={<ImageGallery links={links}/>}/>
+                    <Route path="/new-imagegallery" element={<NewImageGallery links={links}/>}/>
                     <Route path="/focus" element={<Focus focused={false}/>}/>
                     <Route path="/focus2" element={<Focus2/>}/>
                     <Route path="/buttons" element={<ButtonDemo/>}/>
