@@ -81,6 +81,11 @@ const Foo = ({name, fn}) => {
         foobar.current.focus();
     }
 
+    const fooBtn = {
+        "foo": 1,
+        "bar": 2
+    }
+
     return (
         <div>
             Hello, {name}! / {`The ${name}`} <p/>
@@ -96,6 +101,15 @@ const Foo = ({name, fn}) => {
 
             <input name="refbar" ref={foobar}/><p/>
             <button onClick={showRef}>useRef</button>
+            <p/>
+            <button data-id="123" data-action="delete" name="foo" onClick={(e) => {
+                const id = e.target.dataset.id;
+                const action = e.target.dataset.action;
+                const name = e.target.name;
+                console.log("id: ", id, " action:", action);
+                console.log("fooBtn modified: ", {...fooBtn, [name]: 42});
+            }}>Click Me
+            </button>
         </div>
     );
 }
