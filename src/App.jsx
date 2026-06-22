@@ -32,6 +32,8 @@ import NewImageGallery from './sandbox/NewImageGallery.jsx'
 import NewFocus from './sandbox/NewFocus.jsx'
 import NewChangeUsername from './sandbox/NewChangeUsername.tsx'
 import Selected from "./sandbox/Selected.jsx";
+import UseContext from './sandbox/UseContext.jsx'
+import EventPropagationDemo from './sandbox/EventPropagationDemo.jsx'
 
 const Home = () => {
     return (
@@ -98,11 +100,13 @@ function App() {
                     <li><Link to='/fiber'>Fiber 对比</Link></li>
                     <li><Link to='/lazyload'>Lazy Load</Link></li>
                     <li><Link to='/context'>Context</Link></li>
+                    <li><Link to='/use-context'>UseContext</Link></li>
                     <li><Link to='/filter'>Filter</Link></li>
                     <li><Link to='/hello-ts'>Hello TS</Link></li>
                     <li><Link to='/api-demo'>API Demo</Link></li>
                     <li><Link to='/use-reducer'>useReducer</Link></li>
                     <li><Link to='/selected'>Selected</Link></li>
+                    <li><Link to='/event-demo'>Event Demo</Link></li>
                 </ul>
             </nav>
 
@@ -146,12 +150,14 @@ function App() {
                     <Route path="/fiber" element={<FiberDemo/>}/>
                     <Route path="/lazyload" element={<LazyLoadDemo/>}/>
                     <Route path="/context" element={<ContextDemo/>}/>
+                    <Route path="/use-context" element={<UseContext/>}/>
                     <Route path="/filter" element={<FilterDemo/>}/>
                     {/* name="React" → props 对象 { name: "React" }，见 HelloTs.tsx 注释 */}
                     <Route path="/hello-ts" element={<HelloTs name="React"/>}/>
                     <Route path="/api-demo" element={<ApiDemo/>}/>
                     <Route path="/use-reducer" element={<UseReducerDemo/>}/>
                     <Route path="/selected" element={<Selected/>}/>
+                    <Route path="/event-demo" element={<EventPropagationDemo/>}/>
                 </Routes>
             </main>
         </div>
