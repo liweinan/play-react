@@ -29,6 +29,9 @@ import HelloTs from './pages/HelloTs.tsx'
 import ApiDemo from './pages/ApiDemo.jsx'
 import UseReducerDemo from './pages/UseReducerDemo.jsx'
 import NewImageGallery from './sandbox/NewImageGallery.jsx'
+import NewFocus from './sandbox/NewFocus.jsx'
+import NewChangeUsername from './sandbox/NewChangeUsername.tsx'
+import Selected from "./sandbox/Selected.jsx";
 
 const Home = () => {
     return (
@@ -79,11 +82,13 @@ function App() {
                     <li><Link to="/groceryapp">Grocery App</Link></li>
                     <li><Link to='/patient'>Patient</Link></li>
                     <li><Link to='/changeusername'>Change Username</Link></li>
+                    <li><Link to='/new-changeusername'>New Change Username</Link></li>
                     <li><Link to='/togglemessage'>Toggle Message</Link></li>
                     <li><Link to='/imagegallery'>Image Gallery</Link></li>
                     <li><Link to='/new-imagegallery'>New Image Gallery</Link></li>
                     <li><Link to='/focus'>Focus</Link></li>
                     <li><Link to='/focus2'>Focus2</Link></li>
+                    <li><Link to='/new-focus'>New Focus</Link></li>
                     <li><Link to='/buttons'>Tailwind 按钮展示</Link></li>
                     <li><Link to='/useeffectevent'>useEffectEvent 演示</Link></li>
                     <li><Link to='/async'>异步调度演示</Link></li>
@@ -97,6 +102,7 @@ function App() {
                     <li><Link to='/hello-ts'>Hello TS</Link></li>
                     <li><Link to='/api-demo'>API Demo</Link></li>
                     <li><Link to='/use-reducer'>useReducer</Link></li>
+                    <li><Link to='/selected'>Selected</Link></li>
                 </ul>
             </nav>
 
@@ -124,11 +130,13 @@ function App() {
                     <Route path="/contact2" element={<Contact2/>}/>
                     <Route path="/patient" element={<Patient/>}/>
                     <Route path="/changeusername" element={<ChangeUsername/>}></Route>
+                    <Route path="/new-changeusername" element={<NewChangeUsername/>}/>
                     <Route path="/togglemessage" element={<ToggleMessage/>}/>
                     <Route path="/imagegallery" element={<ImageGallery links={links}/>}/>
                     <Route path="/new-imagegallery" element={<NewImageGallery links={links}/>}/>
                     <Route path="/focus" element={<Focus focused={false}/>}/>
                     <Route path="/focus2" element={<Focus2/>}/>
+                    <Route path="/new-focus" element={<NewFocus/>}/>
                     <Route path="/buttons" element={<ButtonDemo/>}/>
                     <Route path="/useeffectevent" element={<UseEffectEventDemo/>}/>
                     <Route path="/async" element={<AsyncDemo/>}/>
@@ -143,6 +151,7 @@ function App() {
                     <Route path="/hello-ts" element={<HelloTs name="React"/>}/>
                     <Route path="/api-demo" element={<ApiDemo/>}/>
                     <Route path="/use-reducer" element={<UseReducerDemo/>}/>
+                    <Route path="/selected" element={<Selected/>}/>
                 </Routes>
             </main>
         </div>
