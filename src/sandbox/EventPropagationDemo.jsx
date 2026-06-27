@@ -14,34 +14,57 @@ export default function EventPropagationDemo() {
             <p>打开 DevTools Console，点击下面元素对照日志。</p>
 
             <section>
-                <h2>1. e.preventDefault()</h2>
-                <p>阻止浏览器默认行为（如链接跳转、表单提交）。</p>
-                <a
-                    href="https://example.com"
+                <h2>1. e.preventDefault() — 只取消默认行为，不阻止冒泡</h2>
+                <p>
+                    你的理解是对的：<code>preventDefault</code> 和 <code>stopPropagation</code> 是两件事。
+                    preventDefault 只管「浏览器默认动作」（链接跳转、表单提交等），事件仍会冒泡到父元素。
+                </p>
+
+                <div
+                    style={{ border: '1px solid #ccc', padding: '1rem', marginTop: '0.5rem' }}
                     onClick={() => {
-                        console.log('[preventDefault] 普通链接 click，未调用 preventDefault → 浏览器会跳转');
-                        appendLog('链接被点了（未 preventDefault，会跳转）');
+                        console.log('[preventDefault] ③ 父 div 收到 click → 说明冒泡未被 preventDefault 阻断');
+                        appendLog('③ 父 div 收到 click（冒泡上来）');
                     }}
                 >
-                    普通链接（会跳转）
-                </a>
-                {' | '}
-                <a
-                    href="https://example.com"
-                    onClick={(e) => {
-                        console.log('[preventDefault] 阻止跳转链接 click，调用 e.preventDefault()');
-                        e.preventDefault();
-                        console.log('[preventDefault] 默认跳转已取消');
-                        appendLog('链接被点了（已 preventDefault，不会跳转）');
-                    }}
-                >
-                    阻止跳转的链接
-                </a>
+                    父 div（点了里面的链接，这里也会出现日志）
+                    <div style={{ marginTop: '0.5rem' }}>
+                        <a
+                            href="https://example.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={() => {
+                                console.log('[preventDefault] ① 普通链接 click，未 preventDefault → 默认行为：新标签打开');
+                                appendLog('① 普通链接 click（未 preventDefault，新标签会打开 example.com）');
+                            }}
+                        >
+                            普通链接（新标签打开）
+                        </a>
+                        {' | '}
+                        <a
+                            href="https://example.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => {
+                                console.log('[preventDefault] ② 链接 click，调用 e.preventDefault()');
+                                e.preventDefault();
+                                console.log('[preventDefault] 默认打开新标签已取消，但事件继续冒泡');
+                                appendLog('② 阻止跳转链接 click（已 preventDefault，不会打开新标签）');
+                            }}
+                        >
+                            阻止跳转的链接
+                        </a>
+                    </div>
+                </div>
+
+                <p style={{ marginTop: '0.5rem' }}>
+                    点「阻止跳转的链接」：不会开新标签，但日志里仍会出现 ③ 父 div —— 这就是 preventDefault 不阻止冒泡。
+                </p>
             </section>
 
             <section>
-                <h2>2. e.stopPropagation()</h2>
-                <p>阻止事件继续冒泡到父元素。</p>
+                <h2>2. e.stopPropagation() — 阻止冒泡，不管默认行为</h2>
+                <p>stopPropagation 只拦冒泡，不取消链接跳转、按钮 submit 等默认行为。</p>
                 <div
                     style={{ border: '1px solid #ccc', padding: '1rem', marginTop: '0.5rem' }}
                     onClick={() => {
